@@ -35,6 +35,14 @@ const hideAllCards = () => {
     });
 };
 
+const shuffleCards = () => {
+    const cardsArray = Array.from(cardsElement);
+    for (let i = cardsArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        cardsArray[i].parentNode.insertBefore(cardsArray[j], cardsArray[i].nextSibling);
+    }
+};
+
 const startGame = () => {
     hideAllCards();
     score = 0;
@@ -59,7 +67,7 @@ const clickedCards = (event) => {
         if (previousCard === '') {
             previousCard = event.target;
         } else if (previousCard.textContent === event.target.textContent) {
-            score += 1;
+            score += 2;
             scoreBoard.textContent = `Score: ${score}`;
             previousCard = '';
             checkWin();
@@ -91,4 +99,4 @@ startButton.addEventListener('click', startGame);
 cardsElement.forEach(card => {
     card.addEventListener('click', clickedCards);
 });
-
+window.addEventListener('load', shuffleCards);
