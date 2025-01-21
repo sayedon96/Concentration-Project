@@ -2,7 +2,7 @@
 
 A simple concentration game where you match pairs of cards.
 
-![Game Screenshot](Screenshot%202025-01-21%20144946.png)
+![Game Screenshot](Screenshot%202025-01-21%20153923.png)
 
 ## Description
 
