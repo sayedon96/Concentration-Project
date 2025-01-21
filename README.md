@@ -2,7 +2,7 @@
 
 A simple concentration game where you match pairs of cards.
 
-![Game Screenshot](Screenshot%202025-01-21%20101006.png)
+![Game Screenshot](Screenshot%202025-01-21%20144946.png)
 
 ## Description
 
@@ -27,3 +27,17 @@ This is a web-based concentration game where the player needs to match pairs of 
 - HTML
 - CSS
 - JavaScript
+
+## Installation
+
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/yourusername/Concentration-Project.git
+    ```
+2. Navigate to the project directory:
+    ```sh
+    cd Concentration-Project
+    ```
+3. Open `index.html` in your web browser.
+
+Enjoy Playing
