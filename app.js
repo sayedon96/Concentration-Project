@@ -48,13 +48,13 @@ const checkWin = () => {
     if (Array.from(cardsElement).every(card => !card.classList.contains('hidden'))) {
         h2Element.textContent = 'You Win! All cards matched!';
         h2Element.classList.remove('hidden');
-        clearInterval(timerInterval);
-        setTimeout(resetGame, 2500);
+        clearInterval(timerInterval,1000);
+        setTimeout(resetGame, 5000);
     } else if (timeLeft === 0) {
         h2Element.textContent = 'Time Up, You Lose';
         h2Element.classList.remove('hidden');
         document.getElementById("H2").style.color = 'red' ;
-        setTimeout(resetGame, 25000);
+        setTimeout(resetGame, 5000);
     }
 };
 
