@@ -11,7 +11,10 @@ const scoreBoard = document.querySelector('#score-board');
 const cardsElement = document.querySelectorAll('.cards');
 const timerElement = document.querySelector('#timer');
 const startButton = document.querySelector('#start-btn');
-const h2Element = document.querySelector('#H2');
+const startGameWindow = document.querySelector('#start-game-window');
+const endGameWindow = document.querySelector('#end-game-window');
+const endGameMessage = document.querySelector('#end-game-message');
+const playAgainButton = document.querySelector('#play-again-btn');
 
 /*-------------- Functions -------------*/
 const hideAllCards = () => {
@@ -28,33 +31,58 @@ const shuffleCards = () => {
     }
 };
 
+const showStartGameWindow = () => {
+    startGameWindow.style.display = 'block';
+};
+
+const hideStartGameWindow = () => {
+    startGameWindow.style.display = 'none';
+};
+
+const showEndGameWindow = (message) => {
+    endGameMessage.textContent = message;
+    document.querySelector('#final-score').textContent = score;
+    endGameWindow.style.display = 'block';
+};
+
+const hideEndGameWindow = () => {
+    endGameWindow.style.display = 'none';
+};
+
 const startGame = () => {
-    hideAllCards();
+    hideStartGameWindow();
     score = 0;
-    timeLeft = 45;
+    timeLeft = 40;
     previousCard = '';
     scoreBoard.textContent = `Score: ${score}`;
-    h2Element.classList.add('hidden');
     timerElement.textContent = `Time: ${timeLeft}s`;
+
+    const difficulty = document.querySelector('#difficulty').value;
+    cardsElement.forEach(card => {
+        if (card.dataset.difficulty.includes(difficulty)) {
+            card.style.display = 'flex';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+
+    setTimeout(hideAllCards, 2500); 
     startTimer();
-    startButton.disabled = true;
 };
 
 const resetGame = () => {
+    hideEndGameWindow();
     window.location.reload();
 };
 
 const checkWin = () => {
-    if (Array.from(cardsElement).every(card => !card.classList.contains('hidden'))) {
-        h2Element.textContent = 'You Win! All cards matched!';
-        h2Element.classList.remove('hidden');
-        clearInterval(timerInterval,1000);
-        setTimeout(resetGame, 5000);
+    if (Array.from(cardsElement).filter(card => card.style.display === 'flex').every(card => !card.classList.contains('hidden'))) {
+        showEndGameWindow('You Win! All cards matched!');
+        document.getElementById("end-game-message").style.color = 'green';
+        clearInterval(timerInterval);
     } else if (timeLeft === 0) {
-        h2Element.textContent = 'Time Up, You Lose';
-        h2Element.classList.remove('hidden');
-        document.getElementById("H2").style.color = 'red' ;
-        setTimeout(resetGame, 5000);
+        showEndGameWindow('Time Up, You Lose');
+        document.getElementById("end-game-message").style.color = 'red';
     }
 };
 
@@ -100,3 +128,5 @@ cardsElement.forEach(card => {
     card.addEventListener('click', clickedCards);
 });
 window.addEventListener('load', shuffleCards);
+playAgainButton.addEventListener('click', resetGame);
+window.addEventListener('load', showStartGameWindow);

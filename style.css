@@ -1,5 +1,4 @@
 * {
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     font-family: Arial, sans-serif;
@@ -13,6 +12,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    
     margin: 0;
 }
 .container {
@@ -53,9 +53,6 @@ body {
     cursor: pointer;
     transition: transform 0.2s;
 }
-.cards:hover {
-    transform: scale(1.05);
-}
 .hidden {
     font-size: 0%;
 }
@@ -82,7 +79,38 @@ body {
     border-radius: 5px;
     margin-left: 20px;
 }
-
+#start-game-window, #end-game-window {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.701);
+    text-align: center;
+    background-color: blueviolet;
+}
+#start-game-window h2, #end-game-window h2 {
+    margin-bottom: 20px;
+}
+#start-game-window button, #end-game-window button {
+    background-color: darkblue;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+}
+#start-game-window button:hover, #end-game-window button:hover {
+    background-color: #3a793d;
+}
+label {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
 
 
 

@@ -1,43 +1,39 @@
-# Concentration-Project
+# Concentration Game
 
-A simple concentration game where you match pairs of cards.
+This is a simple concentration game where players match pairs of cards. The game includes different difficulty levels and a timer to challenge the player.
 
-![Game Screenshot](Screenshot%202025-01-21%20153923.png)
-
-## Description
-
-This is a web-based concentration game where the player needs to match pairs of cards. The game starts with all cards hidden, and the player clicks on cards to reveal them. If two revealed cards match, they remain visible. The game ends when all pairs are matched or the timer runs out.
+![Concentration Game Screenshot](Screenshot%202025-01-22%20023842.png)
+![Concentration Game Screenshot](Screenshot%202025-01-22%20023926.png)
 
 ## Features
 
-- Shuffle cards at the start of the game
-- Timer countdown
-- Score tracking
-- Win/Lose messages
+- Multiple difficulty levels (Easy, Medium, Hard)
+- Timer to track the game duration
+- Scoreboard to keep track of the player's score
+- Start and end game windows with messages
 
-## Usage
+## Setup
 
-1. Open `index.html` in your web browser.
-2. Click the "Start" button to begin the game.
-3. Click on the cards to reveal them and try to match pairs.
+1. Clone the repository to your local machine.
+    ```sh
+    git clone <repository-url>
+    ```
+2. Navigate to the project directory.
+    ```sh
+    cd Concentration-Project
+    ```
+3. Open `index.html` in your preferred web browser.
+
+## How to Play
+
+1. Select the difficulty level from the dropdown menu.
+2. Click the "Start Game" button to begin.
+3. Match pairs of cards by clicking on them. Each match will increase your score.
 4. The game ends when all pairs are matched or the timer runs out.
+5. Click "Play Again" to restart the game.
 
 ## Technologies Used
 
 - HTML
 - CSS
 - JavaScript
-
-## Installation
-
-1. Clone the repository:
-    ```sh
-    git clone https://github.com/yourusername/Concentration-Project.git
-    ```
-2. Navigate to the project directory:
-    ```sh
-    cd Concentration-Project
-    ```
-3. Open `index.html` in your web browser.
-
-Enjoy Playing

@@ -8,33 +8,49 @@
     <link rel="stylesheet" href="style.css">
     <script defer src="app.js"></script>
 </head>
-<body>    
+<body>
+    <div id="start-game-window">
+        <h2>Welcome to the Concentration Game</h2>
+        <label for="difficulty">Difficulty Level :</label>
+        <select id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+        <button id="start-btn">Start Game</button>
+    </div>
+    <div id="end-game-window">
+        <h2 id="end-game-message"></h2>
+        <p>Your Score Is: <b id="final-score"></b></p>
+        <button id="play-again-btn">Play Again</button>
+    </div>
     <div class="container">
         <h1 id="H1">Concentration Game</h1>
         <h2 class="hidden" id="H2"></h2>
         <div class="concentration-box">
-            <div class="cards" id="card1">👍</div>
-            <div class="cards" id="card3">😁</div>
-            <div class="cards" id="card5">🎶</div>
-            <div class="cards" id="card7">🥐</div>
-            <div class="cards" id="card16">🐨</div>
-            <div class="cards" id="card8">🥐</div>
-            <div class="cards" id="card9">🤩</div>
-            <div class="cards" id="card11">🥶</div>
-            <div class="cards" id="card2">👍</div>
-            <div class="cards" id="card18">🍔</div>
-            <div class="cards" id="card12">🥶</div>
-            <div class="cards" id="card13">☠️</div>
-            <div class="cards" id="card6">🎶</div>
-            <div class="cards" id="card15">🐨</div>
-            <div class="cards" id="card14">☠️</div>
-            <div class="cards" id="card10">🤩</div>
-            <div class="cards" id="card17">🍔</div>
-            <div class="cards" id="card4">😁</div>
+            <div class="cards" data-difficulty="easy medium hard" id="card1">👍</div>
+            <div class="cards" data-difficulty="easy medium hard" id="card3">😁</div>
+            <div class="cards" data-difficulty="medium hard" id="card5">🎶</div>
+            <div class="cards" data-difficulty="medium hard" id="card7">🥐</div>
+            <div class="cards" data-difficulty="easy medium hard" id="card16">🐨</div>
+            <div class="cards" data-difficulty="medium hard" id="card8">🥐</div>
+            <div class="cards" data-difficulty="hard" id="card9">🤩</div>
+            <div class="cards" data-difficulty="hard" id="card11">🥶</div>
+            <div class="cards" data-difficulty="easy medium hard" id="card2">👍</div>
+            <div class="cards" data-difficulty="hard" id="card18">🍔</div>
+            <div class="cards" data-difficulty="hard" id="card12">🥶</div>
+            <div class="cards" data-difficulty="hard" id="card13">☠️</div>
+            <div class="cards" data-difficulty="medium hard" id="card6">🎶</div>
+            <div class="cards" data-difficulty="easy medium hard" id="card15">🐨</div>
+            <div class="cards" data-difficulty="hard" id="card14">☠️</div>
+            <div class="cards" data-difficulty="hard" id="card10">🤩</div>
+            <div class="cards" data-difficulty="hard" id="card17">🍔</div>
+            <div class="cards" data-difficulty="easy medium hard" id="card4">😁</div>
+            <div class="cards" data-difficulty="easy medium hard" id="card19">👽</div>
+            <div class="cards" data-difficulty="easy medium hard" id="card20">👽</div>
         </div>
         <div id="timer">Time: 0s</div>
         <div id="score-board">Score: 0</div>
-        <button class="btn btn-light" id="start-btn">Start</button>
     </div>
 </body>
 </html>
