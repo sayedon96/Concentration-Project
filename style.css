@@ -1,0 +1,52 @@
+* {
+    flex-wrap:wrap;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    margin: 10px;
+    background-color: antiquewhite;
+}
+.container {
+    background-color:blueviolet;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: center;
+}
+.concentration-box {
+    display: flex;
+    background-color: rgb(172, 165, 128);
+    border-radius: 5px;
+    width: 75vw;
+}
+#H1 , #H2{
+    background-color: blueviolet;
+}
+.cards {
+    background-color: blue;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 15px;
+    border-radius: 5px;
+}
+.card:hover {
+    transform: scale(1.05);
+}
+
+.hidden {
+    color: rgba(0, 0, 0, 0);
+}
+.show {
+    color: black;
+}
+
+
+
+
+
+
+
+
+
