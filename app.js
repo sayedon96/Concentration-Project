@@ -48,7 +48,7 @@ const shuffleCards = () => {
 const startGame = () => {
     hideAllCards();
     score = 0;
-    timeLeft = 60;
+    timeLeft = 10;
     previousCard = '';
     scoreBoard.textContent = `Score: ${score}`;
     h2Element.classList.add('hidden');
@@ -66,9 +66,11 @@ const checkWin = () => {
         h2Element.textContent = 'You Win! All cards matched!';
         h2Element.classList.remove('hidden');
         clearInterval(timerInterval); 
+        setInterval(resetGame, 2500);
     } else if (timeLeft === 0) {
         h2Element.textContent = 'Time Up, You Lose';
         h2Element.classList.remove('hidden');
+        setInterval(resetGame, 2500)
     }
 };
 
