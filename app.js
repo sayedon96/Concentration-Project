@@ -4,6 +4,7 @@
 let previousCard = '';
 let score = 0;
 let timeLeft = 60; 
+let timerInterval; // Move timerInterval to the top to make it accessible in all functions
 /*----- Cached Element References  -----*/
 // const card1Element = document.querySelector('#card1');
 // const card2Element = document.querySelector('#card2');
@@ -38,10 +39,11 @@ const hideAllCards = () => {
 const shuffleCards = () => {
     const cardsArray = Array.from(cardsElement);
     for (let i = cardsArray.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        cardsArray[i].parentNode.insertBefore(cardsArray[j], cardsArray[i].nextSibling);
+        const mixing = Math.floor(Math.random() * (i + 1));
+        cardsArray[i].parentNode.insertBefore(cardsArray[mixing], cardsArray[i].nextSibling);
     }
 };
+
 
 const startGame = () => {
     hideAllCards();
@@ -54,9 +56,18 @@ const startGame = () => {
     startTimer();
 };
 
+const resetGame = () => {
+    window.location.reload();
+
+}
+
 const checkWin = () => {
     if (Array.from(cardsElement).every(card => !card.classList.contains('hidden'))) {
         h2Element.textContent = 'You Win! All cards matched!';
+        h2Element.classList.remove('hidden');
+        clearInterval(timerInterval); 
+    } else if (timeLeft === 0) {
+        h2Element.textContent = 'Time Up, You Lose';
         h2Element.classList.remove('hidden');
     }
 };
@@ -82,14 +93,13 @@ const clickedCards = (event) => {
 };
 
 const startTimer = () => {
-    const timerInterval = setInterval(() => {
+    timerInterval = setInterval(() => {
         if (timeLeft > 0) {
             timeLeft -= 1;
             timerElement.textContent = `Time: ${timeLeft}s`;
         } else {
             clearInterval(timerInterval);
-            h2Element.textContent = 'Time Out, You Lose';
-            h2Element.classList.remove('hidden');
+            checkWin();
         }
     }, 1000);
 };

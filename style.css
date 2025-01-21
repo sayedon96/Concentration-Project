@@ -34,15 +34,26 @@
     margin: 10px 15px;
     border-radius: 5px;
 }
-.card:hover {
+.cards:hover {
     transform: scale(1.05);
+    
 }
 
 .hidden {
     color: rgba(0, 0, 0, 0);
 }
-
-
+#start-btn {
+    background-color: darkblue;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 20px ;
+}
+#timer {
+    background-color: red;
+}
 
 
 
