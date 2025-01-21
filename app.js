@@ -3,15 +3,16 @@
 /*---------- Variables (state) ---------*/
 let previousCard = '';
 let score = 0;
-let timeLeft = 60; 
-let timerInterval; // Move timerInterval to the top to make it accessible in all functions
-/*----- Cached Element References  -----*/
+let timeLeft = 60;
+let timerInterval;
 
+/*----- Cached Element References  -----*/
 const scoreBoard = document.querySelector('#score-board');
 const cardsElement = document.querySelectorAll('.cards');
 const timerElement = document.querySelector('#timer');
 const startButton = document.querySelector('#start-btn');
 const h2Element = document.querySelector('#H2');
+
 /*-------------- Functions -------------*/
 const hideAllCards = () => {
     cardsElement.forEach(card => {
@@ -27,7 +28,6 @@ const shuffleCards = () => {
     }
 };
 
-
 const startGame = () => {
     hideAllCards();
     score = 0;
@@ -38,25 +38,23 @@ const startGame = () => {
     timerElement.textContent = `Time: ${timeLeft}s`;
     startTimer();
     startButton.disabled = true;
-
 };
 
 const resetGame = () => {
     window.location.reload();
-
-}
+};
 
 const checkWin = () => {
     if (Array.from(cardsElement).every(card => !card.classList.contains('hidden'))) {
         h2Element.textContent = 'You Win! All cards matched!';
         h2Element.classList.remove('hidden');
-        document.getElementById("H2").style.color = "green";
-        clearInterval(timerInterval); 
-        setInterval(resetGame, 2500);
+        clearInterval(timerInterval);
+        setTimeout(resetGame, 2500);
     } else if (timeLeft === 0) {
         h2Element.textContent = 'Time Up, You Lose';
         h2Element.classList.remove('hidden');
-        setInterval(resetGame, 25000)
+        document.getElementById("H2").style.color = 'red' ;
+        setTimeout(resetGame, 25000);
     }
 };
 
@@ -70,7 +68,7 @@ const clickedCards = (event) => {
             scoreBoard.textContent = `Score: ${score}`;
             previousCard = '';
             checkWin();
-        }else {
+        } else {
             setTimeout(() => {
                 if (previousCard !== event.target.textContent) {
                     score -= 5;
@@ -82,7 +80,7 @@ const clickedCards = (event) => {
             }, 150);
         }
     }
-}; 
+};
 
 const startTimer = () => {
     timerInterval = setInterval(() => {

@@ -1,45 +1,48 @@
 * {
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     font-family: Arial, sans-serif;
     padding: 20px;
     margin: 10px;
-    background-color:  rgb(174, 47, 179);
+    background-color: rgb(47, 155, 179);
 }
 body {
-    background-color:  rgb(174, 47, 179);
+    background-color: rgb(47, 155, 179);
     display: flex;
     justify-content: center;
     align-items: center;
-
+    height: 100vh;
+    margin: 0;
 }
 .container {
-    background-color:blueviolet;
-    display:flex;
-    flex-wrap:wrap;
+    background-color: blueviolet;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     max-width: 65vw !important;
     border-radius: 15px;
+    padding: 20px;
 }
 .concentration-box {
     display: flex;
-    background-color: rgb(128, 160, 172);
+    flex-wrap: wrap;
+    background-color: rgb(116, 170, 210);
     border-radius: 5px;
-    /* width: 85vw; */
+    padding: 10px;
+    gap: 10px;
 }
-#H1 ,#H2{
+#H1, #H2 {
     background-color: blueviolet;
     justify-content: center;
     align-items: center;
-
 }
 #H2 {
-    color: red;
+    color: rgb(55, 255, 0);
 }
 .cards {
-    background-color: blue;
+    background-color: rgb(91, 200, 208);
     font-size: 28px;
     justify-content: center;
     align-items: center;
@@ -47,15 +50,14 @@ body {
     border-radius: 5px;
     width: 75px;
     height: 75px;
+    cursor: pointer;
+    transition: transform 0.2s;
 }
 .cards:hover {
     transform: scale(1.05);
-    
 }
-
 .hidden {
-font-size: 0%;
-    
+    font-size: 0%;
 }
 #start-btn {
     background-color: darkblue;
@@ -64,14 +66,13 @@ font-size: 0%;
     border-radius: 5px;
     cursor: pointer;
     font-size: 20px;
-    margin-left: 20px ;
+    margin-left: 20px;
 }
 #timer {
     background-color: red;
     font-size: 20px;
     padding: 10px 20px;
     border-radius: 5px;
-
 }
 #score-board {
     background-color: rgb(255, 255, 255);
@@ -79,7 +80,7 @@ font-size: 0%;
     font-size: 20px;
     padding: 10px 20px;
     border-radius: 5px;
-    margin-left: 20px ;
+    margin-left: 20px;
 }
 
 
