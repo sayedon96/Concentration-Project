@@ -1,6 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&family=Lora:ital,wght@0,400..700;1,400..700&family=Oswald:wght@200..700&family=Playwrite+IN:wght@100..400&display=swap');
 * {
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family:"Playwrite IN", Arial, sans-serif;
     margin: 0;
     padding: 0;
     align-items: center;
@@ -13,6 +14,10 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 107vh;
+}
+#H1 {
+    /* font-family: "Lora"; */
+    margin-bottom: 22px;
 }
 .container {
     background-color: blueviolet;
@@ -96,9 +101,15 @@ body {
     text-align: center;
     width: 80%;
     max-width: 400px;
+    ;
 }
 #start-game-window h2, #end-game-window h2 {
     margin-bottom: 20px;
+    font-weight: bolder;
+}
+#end-game-window p {
+    font-size: 30px;
+    font-weight: bold;
 }
 #start-game-window button, #end-game-window button {
     background-color: darkblue;
