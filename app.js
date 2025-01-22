@@ -78,7 +78,6 @@ const resetGame = () => {
 const checkWin = () => {
     if (Array.from(cardsElement).filter(card => card.style.display === 'flex').every(card => !card.classList.contains('hidden'))) {
         showEndGameWindow('You Win! All cards matched!');
-        // document.getElementById("end-game-message").style.color = 'green';
         clearInterval(timerInterval);
     } else if (timeLeft === 0) {
         showEndGameWindow('Time Up, You Lose');
