@@ -13,7 +13,8 @@ This is a simple concentration game where players match pairs of cards. The game
 - Start and end game windows with messages
 
 ## Setup
-
+visit https://sayed-ali.static.domains/
+Or
 1. Clone the repository to your local machine.
     ```sh
     git clone <repository-url>
