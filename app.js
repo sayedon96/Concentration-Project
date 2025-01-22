@@ -15,6 +15,7 @@ const startGameWindow = document.querySelector('#start-game-window');
 const endGameWindow = document.querySelector('#end-game-window');
 const endGameMessage = document.querySelector('#end-game-message');
 const playAgainButton = document.querySelector('#play-again-btn');
+const difficultyElement = document.querySelector('#difficulty');
 
 /*-------------- Functions -------------*/
 const hideAllCards = () => {
@@ -57,7 +58,7 @@ const startGame = () => {
     scoreBoard.textContent = `Score: ${score}`;
     timerElement.textContent = `Time: ${timeLeft}s`;
 
-    const difficulty = document.querySelector('#difficulty').value;
+    const difficulty = difficultyElement.value;
     cardsElement.forEach(card => {
         if (card.dataset.difficulty.includes(difficulty)) {
             card.style.display = 'flex';

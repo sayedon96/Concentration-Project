@@ -14,6 +14,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 107vh;
+    zoom: 0.8;
 }
 #H1 {
     /* font-family: "Lora"; */
