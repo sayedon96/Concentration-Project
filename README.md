@@ -13,7 +13,7 @@ This is a simple concentration game where players match pairs of cards. The game
 - Start and end game windows with messages
 
 ## Setup
-visit https://sayed-ali.static.domains/
+visit [https://sayed-ali.static.domains/](https://sayedon96.github.io/Concentration-Project/)
 Or
 1. Clone the repository to your local machine.
     ```sh
