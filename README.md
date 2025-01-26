@@ -2,7 +2,7 @@
 
 This is a simple concentration game where players match pairs of cards. The game includes different difficulty levels and a timer to challenge the player.
 
-![Concentration Game Screenshot](Screenshot%202025-01-22%20084825.png)
+![Concentration Game Screenshot](/images/Screenshot%202025-01-22%20084825.png)
 
 
 ## Features
